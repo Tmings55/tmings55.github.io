@@ -2,7 +2,8 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<title>Website của tôi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QM Website</title>
 
 <style>
 *{
@@ -14,7 +15,8 @@
 body{
     height:100vh;
 
-    background-image:url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
+    /* Ảnh nền từ GitHub */
+    background-image:url("miku.png");
     background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
@@ -23,41 +25,76 @@ body{
     justify-content:center;
     align-items:center;
 
-    font-family:Arial,sans-serif;
+    font-family:Arial, sans-serif;
 }
 
-.box{
-    background:rgba(0,0,0,0.6);
-    color:white;
+/* Lớp phủ tối giúp dễ đọc chữ */
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.4);
+}
 
-    width:450px;
+.card{
+    position:relative;
+    z-index:1;
+
+    width:500px;
+    max-width:90%;
+
     padding:30px;
 
-    border-radius:20px;
     text-align:center;
 
-    backdrop-filter:blur(5px);
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(10px);
+
+    border-radius:20px;
+
+    color:white;
+}
+
+.avatar{
+    width:150px;
+    height:150px;
+
+    border-radius:50%;
+    object-fit:cover;
+
+    border:4px solid white;
 }
 
 h1{
-    margin-bottom:15px;
-    font-size:45px;
+    margin-top:15px;
+    margin-bottom:10px;
+    font-size:40px;
 }
 
 p{
-    font-size:20px;
+    line-height:1.8;
+    font-size:18px;
 }
 </style>
-
 </head>
 
 <body>
 
-<div class="box">
-    <h1>Xin chào!</h1>
-    <p>Tôi là qm.</p>
-    <br>
-    <p>Chào mừng đến với website cá nhân của tôi.</p>
+<div class="overlay"></div>
+
+<div class="card">
+
+    <img src="miku.png" class="avatar" alt="Avatar">
+
+    <h1>QM</h1>
+
+    <p>
+        Xin chào! 👋
+        <br>
+        Chào mừng bạn đến với website cá nhân của tôi.
+        <br>
+        Tôi thích lập trình và Discord Bot.
+    </p>
+
 </div>
 
 </body>
