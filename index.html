@@ -5,7 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mings' Bio</title>
 
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -25,17 +29,26 @@ body{
     cursor:pointer;
 }
 
-/* Video nền */
+/* ========================= */
+/* VIDEO NỀN */
+/* ========================= */
+
 .bg-video{
     position:fixed;
     inset:0;
+
     width:100%;
     height:100%;
+
     object-fit:cover;
+
     z-index:-1;
 }
 
-/* Nội dung */
+/* ========================= */
+/* NỘI DUNG */
+/* ========================= */
+
 .content{
     text-align:center;
     color:white;
@@ -44,7 +57,9 @@ body{
 }
 
 /* Avatar */
+
 .avatar{
+
     width:170px;
     height:170px;
 
@@ -59,43 +74,133 @@ body{
 }
 
 .avatar:hover{
+
     transform:scale(1.08);
 }
 
+/* Tiêu đề */
+
 h1{
+
     margin-top:20px;
     margin-bottom:10px;
+
     font-size:46px;
 
     text-shadow:0 0 15px black;
 }
 
+/* Mô tả */
+
 p{
+
     font-size:20px;
     line-height:1.8;
 
     text-shadow:0 0 15px black;
 }
 
-/* Thông báo */
+/* ========================= */
+/* SOCIAL */
+/* ========================= */
+
+.socials{
+
+    margin-top:35px;
+
+    display:flex;
+    justify-content:center;
+    gap:35px;
+}
+
+.socials a{
+
+    text-decoration:none;
+
+    color:white;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    transition:.3s;
+}
+
+.socials i{
+
+    width:65px;
+    height:65px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:30px;
+
+    background:rgba(255,255,255,.18);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    backdrop-filter:blur(8px);
+
+    transition:.3s;
+}
+
+.socials span{
+
+    margin-top:10px;
+
+    font-size:15px;
+
+    text-shadow:0 0 10px black;
+}
+
+.socials a:hover{
+
+    transform:translateY(-8px);
+}
+
+.socials a:hover i{
+
+    transform:scale(1.15);
+
+    background:rgba(255,255,255,.35);
+
+    box-shadow:
+        0 0 20px rgba(255,255,255,.8),
+        0 0 40px rgba(255,255,255,.4);
+}
+
+/* ========================= */
+/* THÔNG BÁO */
+/* ========================= */
+
 #hint{
+
     position:fixed;
+
     bottom:30px;
     left:50%;
+
     transform:translateX(-50%);
 
     color:white;
+
     font-size:18px;
 
     background:rgba(0,0,0,.45);
-    padding:12px 22px;
+
+    padding:12px 24px;
 
     border-radius:30px;
 
-    animation:pulse 1.6s infinite;
+    animation:pulse 1.5s infinite;
 }
 
 @keyframes pulse{
+
     0%,100%{
         opacity:1;
     }
@@ -103,28 +208,52 @@ p{
     50%{
         opacity:.4;
     }
+
 }
 
-/* Hiệu ứng xuất hiện */
+/* ========================= */
+/* HIỆU ỨNG */
+/* ========================= */
+
 @keyframes slideDown{
+
     0%{
+
         opacity:0;
+
         transform:translateY(-400px);
+
     }
 
     100%{
+
         opacity:1;
+
         transform:translateY(0);
+
     }
+
 }
+
 </style>
 </head>
 
 <body>
 
+<!-- ========================= -->
+<!-- VIDEO -->
+<!-- ========================= -->
+
 <video id="bgVideo" class="bg-video" autoplay muted loop playsinline>
-    <source src="https://res.cloudinary.com/vkrhbvp8/video/upload/v1783935887/Gimme_more____MORE_MORE_JUMP___%E5%88%9D%E9%9F%B3%E3%83%9F%E3%82%AF_1080p_yplfma.mp4" type="video/mp4">
+
+    <source src="https://res.cloudinary.com/vkrhbvp8/video/upload/v1783935887/Gimme_more____MORE_MORE_JUMP___%E5%88%9D%E9%9F%B3%E3%83%9F%E3%82%AF_1080p_yplfma.mp4"
+    type="video/mp4">
+
 </video>
+
+<!-- ========================= -->
+<!-- NỘI DUNG -->
+<!-- ========================= -->
 
 <div class="content">
 
@@ -133,40 +262,73 @@ p{
     <h1>Mings</h1>
 
     <p>
+
         Mina-san Konichiwa! ✨
         <br>
         Đây là bio của mình.
         <br>
         Mình sẽ update sau.
+
     </p>
 
+    <div class="socials">
+
+        <a href="https://www.facebook.com/xmingsx" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+            <span>Facebook</span>
+        </a>
+
+        <a href="https://discord.gg/T8mzSjPZ" target="_blank">
+            <i class="fab fa-discord"></i>
+            <span>Discord</span>
+        </a>
+
+        <a href="https://www.tiktok.com/@mings._._?_r=1&_t=ZS-97zyXaAFfAT" target="_blank">
+            <i class="fab fa-tiktok"></i>
+            <span>TikTok</span>
+        </a>
+
+    </div>
+
 </div>
 
+<!-- ========================= -->
+<!-- HƯỚNG DẪN -->
+<!-- ========================= -->
+
 <div id="hint">
-    👆 Nhấp vào bất kỳ đâu để bật nhạc
+👆 Nhấp vào bất kỳ đâu để bật nhạc
 </div>
+
+<!-- ========================= -->
+<!-- SCRIPT -->
+<!-- ========================= -->
 
 <script>
 
 const video = document.getElementById("bgVideo");
 const hint = document.getElementById("hint");
 
-document.addEventListener("click", async ()=>{
+document.addEventListener("click", async () => {
 
     if(video.muted){
 
         video.muted = false;
 
         try{
+
             await video.play();
-        }catch(e){
-            console.log(e);
+
+        }catch(err){
+
+            console.log(err);
+
         }
 
-        hint.style.display="none";
+        hint.style.display = "none";
     }
 
-},{once:true});
+}, { once:true });
 
 </script>
 
