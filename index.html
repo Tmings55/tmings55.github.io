@@ -21,6 +21,8 @@ body{
     align-items:center;
 
     font-family:Arial,sans-serif;
+
+    cursor:pointer;
 }
 
 /* Video nền */
@@ -38,7 +40,7 @@ body{
     text-align:center;
     color:white;
 
-    animation:slideDown 3s ease;
+    animation:slideDown 2s ease;
 }
 
 /* Avatar */
@@ -50,6 +52,7 @@ body{
     object-fit:cover;
 
     border:4px solid white;
+
     box-shadow:0 0 25px rgba(0,0,0,.5);
 
     transition:.3s;
@@ -61,33 +64,52 @@ body{
 
 h1{
     margin-top:20px;
-    margin-bottom:12px;
-
+    margin-bottom:10px;
     font-size:46px;
 
-    text-shadow:
-        0 0 10px rgba(0,0,0,.8),
-        0 0 25px rgba(0,0,0,.5);
+    text-shadow:0 0 15px black;
 }
 
 p{
     font-size:20px;
     line-height:1.8;
 
-    text-shadow:
-        0 0 8px rgba(0,0,0,.9),
-        0 0 18px rgba(0,0,0,.6);
+    text-shadow:0 0 15px black;
+}
+
+/* Thông báo */
+#hint{
+    position:fixed;
+    bottom:30px;
+    left:50%;
+    transform:translateX(-50%);
+
+    color:white;
+    font-size:18px;
+
+    background:rgba(0,0,0,.45);
+    padding:12px 22px;
+
+    border-radius:30px;
+
+    animation:pulse 1.6s infinite;
+}
+
+@keyframes pulse{
+    0%,100%{
+        opacity:1;
+    }
+
+    50%{
+        opacity:.4;
+    }
 }
 
 /* Hiệu ứng xuất hiện */
 @keyframes slideDown{
     0%{
         opacity:0;
-        transform:translateY(-500px);
-    }
-
-    70%{
-        transform:translateY(20px);
+        transform:translateY(-400px);
     }
 
     100%{
@@ -100,15 +122,13 @@ p{
 
 <body>
 
-<!-- Video nền -->
-<video class="bg-video" controls loop>
+<video id="bgVideo" class="bg-video" autoplay muted loop playsinline>
     <source src="https://res.cloudinary.com/vkrhbvp8/video/upload/v1783935887/Gimme_more____MORE_MORE_JUMP___%E5%88%9D%E9%9F%B3%E3%83%9F%E3%82%AF_1080p_yplfma.mp4" type="video/mp4">
-    Trình duyệt của bạn không hỗ trợ video.
 </video>
 
 <div class="content">
 
-    <img src="mikumino7.png" class="avatar" alt="Avatar">
+    <img src="mikumino7.png" class="avatar">
 
     <h1>Mings</h1>
 
@@ -121,6 +141,34 @@ p{
     </p>
 
 </div>
+
+<div id="hint">
+    👆 Nhấp vào bất kỳ đâu để bật nhạc
+</div>
+
+<script>
+
+const video = document.getElementById("bgVideo");
+const hint = document.getElementById("hint");
+
+document.addEventListener("click", async ()=>{
+
+    if(video.muted){
+
+        video.muted = false;
+
+        try{
+            await video.play();
+        }catch(e){
+            console.log(e);
+        }
+
+        hint.style.display="none";
+    }
+
+},{once:true});
+
+</script>
 
 </body>
 </html>
